@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--可以让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--为了让 IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交，官网，移动站，music.163.com">
+    <meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。">
+    <script>
+        // 设置视口与手机物理像素相匹配
+        let scale = 1 / window.devicePixelRatio;
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+        document.write(text);
+        // 设置字体大小
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet/less" href="css/index.less">
+
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="header-in">
+        <div class="header-left">
+            <img class="header-back" src="images/detail-x-back.png" alt="">
+        </div>
+        <div class="header-right">
+            <img src="images/detail-x-playing.png" alt="">
+        </div>
+        <div class="header-center">
+            <span>用户</span>
+        </div>
+    </div>
+</div>
+<!--头部结束-->
+
+主要内容开始
+<div class="bg">
+    <div>
+        <img src="" alt="">
+    </div>
+</div>
+<div class="main">
+    <div class="main-in">
+
+    </div>
+</div>
+<!--主要内容结束-->
+
+
+<!--模板开始-->
+<script id="userInfo" type="text/html">
+    <div class="main-gradient"></div>
+    <div class="main-header">
+        <div class="header-left">
+            <img src="{{profile.avatarUrl}}" alt="">
+        </div>
+        <div class="header-right">
+            <div>
+                <div class="fans"><p>{{profile.followeds}}</p><p>粉丝</p></div>
+                <div class="fans"><p>{{profile.follows}}</p><p>关注</p></div>
+                <div class="fans"><p>Lv.{{level}}</p><p>等级</p></div>
+            </div>
+            <div class="attention">
+                <span>+关注</span>
+                <span>取消关注</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-bottom">
+        <div class="base-info">
+            <h3>基本信息</h3>
+            <p>注册时间：<span>{{profile.createTime}}</span></p>
+            <p>用户名：<span>{{profile.nickname}}</span></p>
+            <p>性别：<span><%if(profile.gender === 1){%>男<%}else{%>女<%}%></span></p>
+            <p>地区：<span>未知</span></p>
+        </div>
+    </div>
+
+</script>
+<!--模板结束-->
+
+<!--引入文件开始-->
+<!--引入js-->
+<script src="../js/zepto.js"></script>
+<!--zepto动画模块-->
+<script src="../js/fx.js"></script>
+<script src="../js/fx_methods.js"></script>
+<!--iscoll-->
+<script src="../js/iscroll-probe.js"></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/less.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/template-web.js"></script>
+<script src="../js/clamp.js"></script>
+<script src="../js/tools.js"></script>
+<script src="js/index.js"></script>
+<!--引入文件结束-->
+
+</body>
+</html>

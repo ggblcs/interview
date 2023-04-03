@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--可以让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--为了让 IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交，官网，移动站，music.163.com">
+    <meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。">
+    <script>
+        // 设置视口与手机物理像素相匹配
+        let scale = 1 / window.devicePixelRatio;
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+        document.write(text);
+        // 设置字体大小
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet/less" href="css/index.less">
+
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="header-in">
+        <div class="header-left">
+            <img class="header-back" src="./images/detail-x-back.png" alt="">
+        </div>
+        <div class="header-right">
+            <img src="./images/detail-x-playing.png" alt="">
+        </div>
+        <div class="header-center">
+            <span>专辑</span>
+        </div>
+    </div>
+</div>
+<!--头部结束-->
+
+<!--主要内容开始-->
+<div class="main">
+    <div class="main-in">
+        <div class="main-top">
+            <!-- topInfo模板开始-->
+            <!-- topInfo模板结束-->
+        </div>
+        <div class="main-bottom">
+            <div class="bottom-header">
+                <div class="header-left">
+                    <p class="header-select">
+                        选择歌曲
+                        <span>（共15首）</span>
+                    </p>
+
+                </div>
+                <div class="header-right">
+                    <p class="header-playAll">播放全部</p>
+                    <p class="header-OK">确定</p>
+                </div>
+            </div>
+            <div class="bottom-content">
+                <!--电台节目界面开始-->
+                <div class="content-list">
+
+                    <ul class="list-main">
+                        <!--bottomList模板-->
+
+                    </ul>
+
+                </div>
+                <!--电台节目界面结束-->
+
+            </div>
+
+        </div>
+    </div>
+    <div class="main-bg">
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.busanha.net%2Fuploads%2Fallimg%2F150409%2F1-150409211A3956.jpg&refer=http%3A%2F%2Fwww.busanha.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1616913433&t=ce84937410b3a78a1b5c3788cb2e62f7" alt="">
+        <div></div>
+    </div>
+</div>
+<!--主要内容结束-->
+
+<!--底部开始-->
+<div class="footer"></div>
+<!--底部结束-->
+
+
+<!--模板开始-->
+<script id="topInfo" type="text/html">
+    <div class="top-info">
+        <div class="info-left">
+            <img src="./images/detail-x-album.png" alt="">
+            <img src="{{album.picUrl}}" alt="">
+        </div>
+        <div class="info-right">
+            <p class="info-title">{{album.name}}</p>
+            <p class="info-singer">歌手：<span>{{album.artist.name}}</span></p>
+            <p class="info-public">发行时间：{{album.publishTime}}</p>
+            <p class="info-detail">{{album.description}}</p>
+        </div>
+    </div>
+</script>
+<script id="bottomList" type="text/html">
+    <%for(let i=0;i< songs.length;i++){%>
+    <li data-song-message='{"id":"{{songs[i].id}}","name":"{{songs[i].name}}","singer":"{{songs[i].ar[0].name}}"}'>
+        <div class="item-left">
+            <div class="item-checked">
+                <p>{{i+1}}</p>
+                <i></i>
+            </div>
+            <div class="item-info">
+                <p>
+                    {{songs[i].name}}
+                    <%if(songs[i].alia[0]){%>
+                    ({{songs[i].alia[0]}})
+                    <%}%>
+                </p>
+                <div>
+                    <img src="images/sq.png" alt="">
+                    <p>{{songs[i].ar[0].name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="item-right">
+            <!--                                <img src="images/detail-small-more.png" alt="">-->
+            <img src="images/detail-x-play.png" alt="">
+        </div>
+    </li>
+
+    <%}%>
+</script>
+<!--模板结束-->
+
+<!--引入文件开始-->
+<!--引入js-->
+<script src="../js/zepto.js"></script>
+<!--zepto动画模块-->
+<script src="../js/fx.js"></script>
+<script src="../js/fx_methods.js"></script>
+<!--iscoll-->
+<script src="../js/iscroll-probe.js"></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/less.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/template-web.js"></script>
+<script src="../js/clamp.js"></script>
+<script src="../js/tools.js"></script>
+<script src="js/index.js"></script>
+<!--引入文件结束-->
+
+</body>
+</html>

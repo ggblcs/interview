@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--可以让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--为了让 IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交，官网，移动站，music.163.com">
+    <meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。">
+    <script>
+        // 设置视口与手机物理像素相匹配
+        let scale = 1 / window.devicePixelRatio;
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+        document.write(text);
+        // 设置字体大小
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet/less" href="css/index.less">
+
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="header-in">
+        <div class="header-left">
+            <img class="header-back" src="./images/detail-x-back.png" alt="">
+        </div>
+        <div class="header-right">
+            <img src="./images/detail-x-playing.png" alt="">
+        </div>
+        <div class="header-center">
+            <span>歌手</span>
+        </div>
+    </div>
+</div>
+<!--头部结束-->
+
+<!--主要内容开始-->
+<div class="bg">
+    <div>
+        <img src="https://p2.music.126.net/jggnnZ0OIJjuj4Wmn-d-IQ==/109951165400836892.jpg" alt="">
+    </div>
+</div>
+<div class="main">
+    <div class="main-in">
+        <div class="main-top">
+            <h3>林俊杰</h3>
+            <p>457.9万粉丝</p>
+            <p class="attention"><span>+关注</span><span>✔已关注</span></p>
+        </div>
+        <div class="main-center">
+            <ul>
+                <li class="active">主页</li>
+                <li>歌曲</li>
+                <li>专辑</li>
+                <li>视频</li>
+            </ul>
+            <span></span>
+        </div>
+        <div class="main-bottom">
+            <!--主页-->
+            <div class="main-home active"><!--mainHome模板--></div>
+            <!--单曲-->
+            <div class="main-song">
+                <div class="song-title">
+                    <div class="title-left">
+                        <div class="song-select">选择歌曲</div>
+                        <div class="song-select-all">
+                            <i></i>
+                            全选
+                        </div>
+                    </div>
+                    <div class="title-right">
+                        <div class="song-play"><span>播放全部</span></div>
+                        <div class="song-OK">确认</div>
+                    </div>
+                </div>
+                <ul><!--mainSong模板--> </ul>
+            </div>
+            <!--专辑-->
+            <div class="main-album">
+                <ul><!--mainAlbum模板-->  </ul>
+            </div>
+            <!--视频-->
+            <div class="main-video">
+                <ul><!--mainVideo模板--></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--主要内容结束-->
+
+<!--底部开始-->
+<div class="footer"></div>
+<!--底部结束-->
+
+
+<!--模板开始-->
+<script id="mainHome" type="text/html">
+    <div class="home-header">
+        <h3>艺人百科</h3>
+        <div>
+            <div>
+                <%if(data.artist.rank){%>
+                <p>{{data.artist.rank.rank}}</p>
+                <%}else{%>
+                <p>1000+</p>
+                <%}%>
+                <span>华语榜排名</span>
+            </div>
+            <div>
+                <p>335万</p>
+                <span>云圈阅读量</span>
+            </div>
+        </div>
+    </div>
+    <div class="home-content">
+        <p>艺人名：<span>{{data.artist.name}}</span></p>
+        <p>性别：<span>未知</span></p>
+        <p>生日：<span>未知</span></p>
+        <p>国籍：<span>未知</span></p>
+        <p>大学：<span>未知</span></p>
+        <p>歌手简介：<span>{{data.artist.briefDesc}}</span></p>
+    </div>
+</script>
+<script id="mainSong" type="text/html">
+    <%hotSongs.forEach(function(item,index){%>
+    <li data-song-message='{"id":"{{item.id}}","name":"{{item.name}}","singer":"{{null}}"}'>
+        <div class="song-left"> <i></i><span>{{index+1}}</span></div>
+        <div class="song-right">
+            <p>{{item.name}}
+                <%if(item.alia[0]){%>
+                <span>（{{item.alia[0]}}）</span>
+                <%}%>
+            </p>
+            <p class="song-singer"> <%item.ar.forEach(function(it,i){%> {{it.name}} <%if(i+1<item.ar.length){%> / <%}})%> {{item.al.name}}</p>
+        </div>
+    </li>
+    <%})%>
+</script>
+<script id="mainAlbum" type="text/html">
+    <%hotAlbums.forEach(function(item,index){%>
+    <li data-album-id="{{item.id}}">
+        <div class="album-left">
+            <img src="./images/detail-x-album.png" alt="">
+            <img src="{{item.picUrl}}" alt="">
+        </div>
+        <div class="album-right">
+            <p>{{item.name}}</p>
+            <p>{{item.publishTime}} {{item.size}}首</p>
+        </div>
+    </li>
+    <%})%>
+</script>
+<script id="mainVideo" type="text/html">
+    <%mvs.forEach(function(item,index){%>
+    <li data-mv-id="{{item.id}}">
+        <div class="video-top">
+            <img src="{{item.imgurl}}" alt="">
+        </div>
+        <div class="video-bottom">
+            <p>{{item.name}}</p>
+            <p><span>{{item.playCount}}万播放</span><span>{{item.publishTime}}</span></p>
+        </div>
+    </li>
+    <%})%>
+</script>
+<!--模板结束-->
+
+<!--引入文件开始-->
+<!--引入js-->
+<script src="../js/zepto.js"></script>
+<!--zepto动画模块-->
+<script src="../js/fx.js"></script>
+<script src="../js/fx_methods.js"></script>
+<!--iscoll-->
+<script src="../js/iscroll-probe.js"></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/less.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/template-web.js"></script>
+<script src="../js/clamp.js"></script>
+<script src="../js/tools.js"></script>
+<script src="js/index.js"></script>
+<!--引入文件结束-->
+
+</body>
+</html>

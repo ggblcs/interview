@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--可以让部分国产浏览器默认采用高速模式渲染页面-->
+    <meta name="renderer" content="webkit">
+    <!--为了让 IE 浏览器运行最新的渲染模式下-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交，官网，移动站，music.163.com">
+    <meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。">
+    <script>
+        // 设置视口与手机物理像素相匹配
+        let scale = 1 / window.devicePixelRatio;
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+        document.write(text);
+        // 设置字体大小
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet/less" href="css/index.less">
+
+</head>
+<body>
+
+<!--头部开始-->
+<div class="header">
+    <div class="header-in">
+        <img src="images/player-x-back.png" alt="" class="go-back">
+        <div>
+            <p class="header-title">谁在风里</p>
+            <p class="header-singer">彭希言</p>
+        </div>
+        <img src="images/player-x-share.png" alt="">
+    </div>
+</div>
+<!--头部结束-->
+
+<!--中间开始-->
+<div class="main">
+    <div class="bg"></div>
+    <div class="main-in">
+        <
+        <div class="main-default">
+            <div class="default-top">
+                <img src="images/player-x-needle.png" alt="">
+            </div>
+            <div class="default-middle">
+                <div class="bg-disc">
+                    <div></div>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <ul class="default-bottom">
+                <li><img src="images/player-x-favorite.png" alt=""></li>
+                <li><img src="images/player-x-download.png" alt=""></li>
+                <li><img src="images/player-x-effect.png" alt=""></li>
+                <li><img src="images/player-x-comment.png" alt=""></li>
+                <li><img src="images/player-x-more.png" alt=""></li>
+            </ul>
+        </div>
+
+        <div class="main-lyric">
+            <div class="lyric-top">
+                <img src="images/player-x-trumpet.png" alt="">
+                <div class="voice-progress-bar">
+                    <div class="voice-progress-line">
+                        <div class="voice-progress-dot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lyric-bottom">
+                <!--                歌词-->
+                <ul class="lyric-list"></ul>
+                <div class="lyric-time-line">
+                    <img src="images/player-small-play.png" alt="">
+                    <div class="line"></div>
+                    <span>00:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--中间结束-->
+
+<!--底部开始-->
+<div class="footer">
+    <div class="footer-in">
+        <!--        进度条开始-->
+        <div class="footer-top">
+            <span class="cur-time">00:00</span>
+            <div class="progress-bar">
+                <div class="progress-line">
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+            <span class="total-time">00:00</span>
+        </div>
+        <!--        进度条结束-->
+        <!--        控制器开始-->
+        <ul class="footer-bottom">
+            <li class="play-mode"><img src="images/player-x-loop.png" alt=""></li>
+            <li class="prev"><img src="images/player-x-pre.png" alt=""></li>
+            <li class="play">
+                <img src="images/player-x-pause.png" alt="">
+                <img src="images/player-x-play.png" alt="">
+            </li>
+            <li class="next"><img src="images/player-x-next.png" alt=""></li>
+            <li class="list"><img src="images/player-x-list.png" alt=""></li>
+        </ul>
+        <!--        控制器结束-->
+    </div>
+</div>
+<!--底部结束-->
+
+<!--音乐开始-->
+<audio>
+
+</audio>
+<!--音乐结束-->
+
+<!--模态窗口Start-->
+<div class="modal">
+    <div class="modal-main">
+        <div class="modal-top">
+            <p>
+                <img src="images/playlist-x-loop.png" alt="">
+                <span>列表循环</span>
+            </p>
+            <div>
+                <p>
+                    <img src="images/player-small-favorite.png" alt="">
+                    <span>收藏全部</span>
+                </p>
+                <img src="images/player-x-delete.png" alt="" class="clear-all">
+            </div>
+        </div>
+        <div class="modal-list">
+            <ul class="modal-middle"></ul>
+        </div>
+        <div class="modal-bottom">关闭</div>
+    </div>
+</div>
+<!--模态窗口End-->
+
+<!--引入文件开始-->
+<!--引入js-->
+<script src="../js/zepto.js"></script>
+<!--zepto动画模块-->
+<script src="../js/fx.js"></script>
+<script src="../js/fx_methods.js"></script>
+<!--iscoll-->
+<script src="../js/iscroll-probe.js"></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/less.js"></script>
+<script src="../js/axios.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/template-web.js"></script>
+<script src="../js/clamp.js"></script>
+<script src="../js/tools.js"></script>
+<script src="./js/progress.js"></script>
+<script src="./js/player.js"></script>
+<script src="js/index.js"></script>
+<!--引入文件结束-->
+
+</body>
+</html>

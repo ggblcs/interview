@@ -1,0 +1,171 @@
+//@import url(./common);
+@import "../../css/common";
+@redColor: #fd271b;
+
+.main{
+  width: 100%;
+  height: 100%;
+  .main-in{
+    padding-top: 128/100rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    .main-header{
+      width: 100%;
+      padding: 0 20/100rem 40/100rem 20/100rem;
+      box-sizing: border-box;
+      ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        li{
+          span{
+            padding: 8/100rem 20/100rem;
+            font-size: 24/100rem;
+            border-radius: 20/100rem;
+          }
+          &.active{
+            span{
+              background-color: rgba(253, 39, 27, 0.2);
+            }
+          }
+        }
+      }
+    }
+    .main-content{
+      width: 100%;
+      position: absolute;
+      top: 204/100rem;
+      overflow: auto;
+      bottom: 0;
+      &>div{
+        width: 100%;
+        .list{
+          width: 100%;
+          display: none;
+          padding: 0 30/100rem 88/100rem 30/100rem;
+          box-sizing: border-box;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          li{
+            background-color: #eee;
+            width: 330/100rem;
+            border-radius: 30/100rem;
+            overflow: hidden;
+            margin-bottom: 30/100rem;
+            .list-top{
+              width: 100%;
+              height: 330/100rem;//365/100rem 也很好
+              background-color: #888;
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              position: relative;
+              &>img:nth-child(1){
+                width: 100%;
+                height: 100%;
+                opacity: 0.6;
+                filter: blur(10px);
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              &>img:nth-child(2){
+                width: 300/100rem;
+                height: 171/100rem;
+                position: absolute;
+                top: 110/100rem;
+                left: 15/100rem;
+                border-radius: 15/100rem;
+                border: 1px solid rgba(255, 255, 255, 0.51);
+              }
+              &>p{
+                position: absolute;
+                top: 35/100rem;
+                left: 117/100rem;
+                z-index: 100;
+                font-size: 24/100rem;
+                font-weight: bolder;
+                color: rgba(51, 51, 51, 0.34);
+                span{
+                  padding: 5/100rem 30/100rem;
+                  border-radius: 30/100rem;
+                  background-color: #fff;
+                }
+              }
+              &>i{
+                display: inline-block;
+                position: absolute;
+                width: 20/100rem;
+                height: 20/100rem;
+                //border: 3px solid white;
+                border-style: solid;
+                border-width: 4px;
+                &:nth-of-type(1){
+                  border-top-left-radius: 15/100rem;
+                  border-color: white transparent transparent white;
+                  top: 109/100rem;
+                  left: 14/100rem;
+                }
+                &:nth-of-type(2){
+                  border-top-right-radius: 15/100rem;
+                  border-color: white white transparent transparent;
+                  top: 109/100rem;
+                  right: 14/100rem;
+                }
+                &:nth-of-type(3){
+                  border-bottom-left-radius: 15/100rem;
+                  border-color: transparent transparent white white;
+                  top: 257/100rem;
+                  left: 14/100rem;
+                }
+                &:nth-of-type(4){
+                  border-bottom-right-radius: 15/100rem;
+                  border-color: transparent white white transparent;
+                  top: 257/100rem;
+                  right: 14/100rem;
+                }
+              }
+            }
+            .list-bottom{
+              border-top: 1px solid #777;
+              width: 100%;
+              padding: 25/100rem 20/100rem 20/100rem 20/100rem;
+              box-sizing: border-box;
+              p:nth-child(1){
+                line-height: 40/100rem;
+                height: 82/100rem;
+                font-size: 24/100rem;
+                color: #333;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+              }
+              p:nth-child(2){
+                margin-top: 10/100rem;
+                color: #999;
+                font-size: 20/100rem;
+                display: flex;
+                justify-content: space-between;
+                span{
+
+                }
+              }
+            }
+          }
+          &.active{
+            display: flex;
+          }
+        }
+        .main-bottom{
+          width: 100%;
+          height: 88/100rem;
+          font-size: 24/100rem;
+          text-align: center;
+          line-height: 88/100rem;
+          padding-bottom: 88/100rem;
+        }
+      }
+    }
+  }
+}

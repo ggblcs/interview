@@ -1,0 +1,83 @@
+
+<link rel="stylesheet" href="./../common/css/header.css">
+<!--头部开始：双飞翼布局-->
+<div class="header-in">
+    <div class="header-default">
+        <div class="header-center">
+            <!--    中间输入框部分-->
+            <div class="header-center-box">
+                <img src="../common/images/topbar-it666-search.png" alt="">
+                <input type="text" placeholder="大家都在搜 那个女孩">
+                <!--            我的界面中样式，默认隐藏-->
+                <span class="header-title">音乐</span>
+                <!--            朋友界面的动态切换按钮，默认隐藏-->
+                <div class="header-switch">
+                    <i></i>
+                    <span class="active new">最新</span>
+                    <span class="hot">最热</span>
+                </div>
+            </div>
+        </div>
+        <!--    输入框左侧小图标-->
+        <div class="header-left"></div>
+        <!--        取消按钮默认不显示-->
+        <div class="header-cancel">
+            <a href="#">取消</a>
+        </div>
+        <!--    输入框右侧小图标-->
+        <div class="header-right"></div>
+    </div>
+    <!--    搜索界面，用iscoll来实现需要搭建三层结构-->
+    <div class="header-container">
+        <div class="header-wrapper">
+            <!--            广告-->
+            <div class="search-ad">
+                <img src="./../common/images/search-banner.gif" alt="" class="fluid-img">
+                <span>x</span>
+            </div>
+            <!--            搜索历史-->
+            <div class="search-history">
+                <div class="history-top">
+                    <h6>搜索历史</h6>
+                    <img src="./../common/images/search-it666-delete.png" alt="">
+                </div>
+                <ul class="history-bottom"></ul>
+            </div>
+            <!--            热搜榜-->
+            <div class="search-hot">
+                <div class="hot-top">
+                    <h6>热搜榜</h6>
+                </div>
+                <ul class="hot-bottom">
+
+                </ul>
+            </div>
+            <!--            搜搜-->
+            <div class="search-current">
+                <div class="current-top">搜索"讲"</div>
+                <ul class="current-bottom">
+                    <li>
+                        <img src="../common/images/topbar-it666-search.png" alt="">
+                        <p>fadsfasjdgl</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--热搜榜模板-->
+<script id="hotDetail" type="text/html">
+    <%for (let i=0;i<data.length;i++){%>
+    <li>
+        <span class="hot-left"><%=i+1%></span>
+        <div class="hot-right">
+            <p>
+                <strong><%=data[i].searchWord%></strong>
+                <span><%=data[i].score%></span>
+                <img src="<%=data[i].iconUrl%>" alt="">
+            </p>
+            <p><%=data[i].content%></p>
+        </div>
+    </li>
+    <%}%>
+</script>

@@ -1,0 +1,437 @@
+//@import url(./common);
+@import "../../css/common";
+@redColor: #fd271b;
+.header{
+  width: 100%;
+  height: 88/100rem;
+  line-height: 88/100rem;
+  padding: 0 30/100rem;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  .header-in{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    img{
+      vertical-align: top;
+      position: relative;
+      top: 16/100rem;
+      width: 56/100rem;
+      height: 56/100rem;
+    }
+    img:nth-of-type(1){
+
+    }
+    img:nth-of-type(2){
+
+    }
+    div{
+      text-align: center;
+      color: white;
+      .header-title{
+        font-size: 30/100rem;
+        line-height: 58/100rem;
+      }
+      .header-singer{
+        font-size: 22/100rem;
+        line-height: 30/100rem;
+      }
+    }
+  }
+}
+
+.main{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  .bg{
+    background: url("../images/test.jpg") no-repeat center top;
+    width: 100%;
+    height: 100%;
+    background-size: auto 100%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    filter: blur(70px);
+  }
+  .main-in{
+    background-color: rgba(0,0,0,0.5);
+    padding: 88/100rem 0 208/100rem 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    .main-default{
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      left: 0;
+      top: 0;
+      .default-top{
+        position: relative;
+        z-index: 50;
+        img{
+          position: absolute;
+          left: 50%;
+          margin-left: -60/100rem;
+          width: 250/100rem;
+          transform-origin: 62/100rem 62/100rem;//修改旋转中心点
+          transform: rotate(-30deg);
+          transition: transform 400ms linear;
+        }
+      }
+      .default-middle{
+        width: 100%;
+        height: 500/100rem;
+        .vCenter;
+        .bg-disc{
+          width: 500/100rem;
+          height: 500/100rem;
+          background-color: rgba(255,255,255,0.5);
+          border-radius: 50%;
+          .hCenter;
+          div{
+            width: 450/100rem;
+            height: 450/100rem;
+            background-color: rgba(0,0,0,0.5);
+            .center;
+            border-radius: 50%;
+          }
+        }
+        .swiper-container{
+          width: 100%;
+          height: 100%;
+          .swiper-slide{
+            .disc-pic{
+              animation: sport 10s linear 0s infinite normal;
+              animation-play-state: paused;
+              width: 500/100rem;
+              height: 500/100rem;
+              background: url("../images/player-x-disc.png") no-repeat;
+              background-size: 100% auto;
+              .center;
+              img{
+                width: 320/100rem;
+                height: 320/100rem;
+                border-radius: 50%;
+                .center;
+              }
+            }
+          }
+        }
+      }
+      .default-bottom{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 60/100rem;
+        left: 0;
+        width: 100%;
+        padding: 0 30/100rem;
+        box-sizing: border-box;
+        li{
+          img{
+            width: 56/100rem;
+            height: 56/100rem;
+          }
+        }
+      }
+    }
+    .main-lyric{
+      left: 0;
+      top: 200%;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .lyric-top{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30/100rem;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 900;
+        img{
+          width: 56/100rem;
+          height: 56/100rem;
+        }
+        .voice-progress-bar{
+          position: relative;
+          top: 23/100rem;
+          flex: 1;
+          margin-left: 30/100rem;
+          height: 10/100rem;
+          background-color: rgba(255,255,255,0.5);
+          .voice-progress-line{
+            position: absolute;
+            height: 100%;
+            background-color: white;
+            width: 50%;
+            .voice-progress-dot{
+              position: absolute;
+              top: -5px;
+              right: -10px;
+              width: 20/100rem;
+              height: 20/100rem;
+              background-color: white;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      .lyric-bottom{
+        width: 100%;
+        padding: 0 30/100rem;
+        box-sizing: border-box;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        .lyric-time-line{
+          height: 80/100rem;
+          line-height: 80/100rem;
+          //display: flex;
+          display: none;
+          justify-content: space-between;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          top: 0;
+          img{
+            width: 56/100rem;
+            height: 56/100rem;
+            position: relative;
+            top: 12/100rem;
+          }
+          div{
+            flex: 1;
+            height: 5/100rem;
+            margin: 0 20/100rem;
+            background-color: rgba(255,255,255,0.5);
+            position: relative;
+            top: 36/100rem;
+          }
+          span{
+            font-size: 18/100rem;
+            //line-height: 56/100rem;
+            color: white;
+          }
+        }
+        .lyric-list{
+          li{
+            width: 100%;
+            text-align: center;
+            height: 80/100rem;
+            white-space: nowrap;
+            line-height: 80/100rem;
+            font-size: 30/100rem;
+            color: #666;
+            &.active{
+              color: #fff !important;
+            }
+            &.hover{
+              color: red;
+            }
+          }
+        }
+      }
+    }
+    &.active{
+      .main-default{
+        left: 0;
+        top: 200%;
+      }
+      .main-lyric{
+        left: 0;
+        top: -100%;
+      }
+    }
+
+  }
+}
+
+.footer{
+  width: 100%;
+  padding: 0 30/100rem;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  .footer-in{
+    width: 100%;
+    .footer-top{
+      width: 100%;
+      height: 88/100rem;
+      line-height: 88/100rem;
+      display: flex;
+      justify-content: space-between;
+      span{
+        font-size: 18/100rem;
+        color: white;
+        display: inline-block;
+        width: 60/100rem;
+        text-align: center;
+      }
+      .progress-bar{
+        flex-grow: 1;
+        height: 10/100rem;
+        background-color: rgba(255,255,255,0.5);
+        margin: 0 10/100rem;
+        position: relative;
+        top: 39/100rem;
+        .progress-line{
+          background-color: white;
+          height: 100%;
+          width: 0;
+          position: relative;
+          .progress-dot{
+            width: 20/100rem;
+            height: 20/100rem;
+            background-color: white;
+            border-radius: 50%;
+            .vCenter;
+            right: -10/100rem;
+          }
+        }
+      }
+    }
+    .footer-bottom{
+      width: 100%;
+      height: 120/100rem;
+      display: flex;
+      justify-content: space-between;
+      li{
+        padding-top: 32/100rem;
+        img{
+          width: 56/100rem;
+          height: 56/100rem;
+        }
+      }
+      .play{
+        padding-top: 10/100rem;
+        img{
+          width: 100/100rem;
+          height: 100/100rem;
+        }
+        img:nth-child(1){
+          display: none;
+        }
+        img:nth-child(2){
+          display: inline-block;
+        }
+        &.active{
+          img:nth-child(1){
+            display: inline-block;
+          }
+          img:nth-child(2){
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  display: none;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.5);
+  .modal-main{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 30/100rem;
+    box-sizing: border-box;
+    border-top-left-radius: 28/100rem;
+    border-top-right-radius: 28/100rem;
+    background-color: white;
+    .modal-top{
+      width: 100%;
+      height: 88/100rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 28/100rem;
+      line-height: 88/100rem;
+      border-bottom: 1px solid #ccc;
+      img{
+        width: 56/100rem;
+        height: 56/100rem;
+        vertical-align: top;
+        position: relative;
+        top: 16/100rem;
+      }
+      &>p{
+        display: flex;
+        justify-content: space-between;
+      }
+      &>div{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .modal-list{
+      width: 100%;
+      height: 445/100rem;
+      overflow: auto;
+      .modal-middle{
+        width: 100%;
+        li{
+          width: 100%;
+          line-height: 88/100rem;
+          display: flex;
+          justify-content: space-between;
+          height: 88/0/100rem;
+          font-size: 28/100rem;
+          border-bottom: 1px solid #ccc;
+          p{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          img{
+            width: 26/100rem;
+            height: 26/100rem;
+            position: relative;
+            top: 31/100rem;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+    .modal-bottom{
+      width: 100%;
+      height: 120/100rem;
+      line-height: 120/100rem;
+      font-size: 28/100rem;
+      text-align: center;
+    }
+
+  }
+}
+
+@keyframes sport {
+  from{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }to{
+     transform: translate(-50%,-50%) rotate(360deg);
+
+   }
+}
